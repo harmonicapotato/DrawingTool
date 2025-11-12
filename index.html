@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Drawing Tool</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <style>
+      body {
+        margin: 0;       /* removes default page margin */
+        padding: 0;
+        overflow: hidden; /* hides scrollbars */
+        background-color: #fff; /* sets background behind canvas */
+      }
+      canvas {
+        display: block;  /* removes small space above canvas */
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+     function setup() {
+  createCanvas(1000, 1000);
+  background(0);
+  
+  colors = [
+    color(230, 40, 40),  
+    color(250, 210, 60),  
+    color(255, 255, 255), 
+    color(40, 80, 180)    
+  ];
+  strokeWeight(4);
+  noFill();
+}
 
+function draw() {
+  
+  stroke(random(colors));
+  
+  let x1 = pmouseX + random(-4, 4);
+  let y1 = pmouseY + random(-4, 4);
+  let x2 = mouseX + random(-4, 4);
+  let y2 = mouseY + random(-4, 4);
+  
+   line(x1, y1, x2, y2);
+  
+}
+    </script>
+  </body>
+</html>
